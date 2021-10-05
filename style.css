@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Rubik+Beastly&display=swap');
+
+:root {
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+
+/* navigation */
+
+header.header {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header img {
+    width: 3em;
+    padding: 0;
+    margin: 0;
+}
+
+.search {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+}
+
+.search::placeholder {
+    color: #7378c5;
+}
+
+.search:focus {
+    outline: none;
+    background-color: var(--primary-color);
+}
+
+#form {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.filterBar {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+    padding: 0.5em;
+    margin: 0;
+}
+
+.filterBar label {
+    margin: 0;
+    margin-right: 0.5em;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--primary-color)
+}
+
+#filter {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #7378c5;
+}
+
+#logo a {
+    font-family: 'Rubik Beastly', cursive;
+    letter-spacing: 4px;
+    font-weight:lighter;
+    font-size: 1.5em;
+    color: rgb(0, 204, 255);
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+/* API body */
+
+.background {
+    background: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80') no-repeat fixed;
+    background-size: 100% 100%;
+    background-position: 0vw;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.movie img {
+    width: 100%;
+}
+
+.movie-info {
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+.movie-info span {
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green {
+    color: lightgreen;
+}
+
+.movie-info span.orange {
+    color: orange;
+}
+
+.movie-info span.red {
+    color: red;
+}
+
+.overview {
+    background-color: white;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}
+
+.movie:hover img {
+    background-color: rgba(0, 0, 0, 0.6);
+    filter: blur(4px);
+    transition: filter .4s ease;
+}
+
+.arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.arrows.active {
+    display: none;
+}
+
+.arrows button {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #7378c5;
+}
+
+.arrows button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2em 4em;
+    align-items: center;
+    color: #6c757d;
+    background: rgb(47,47,47);
+}
+
+footer h4, footer a {
+    color: #7378c5;
+}
+
+div {
+    text-align: center;
+}
+
+@media only screen and (max-width: 950px) {
+    footer {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    header.header {
+        justify-content: center;
+    }
+
+    #logo {
+        display: none;
+    }
+}
